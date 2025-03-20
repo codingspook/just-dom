@@ -31,11 +31,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/codingspook/easy-dom.git"
+        "url": "git+https://github.com/codingspook/just-dom.git"
     },
     "bugs": {
-        "url": "https://github.com/codingspook/easy-dom/issues"
+        "url": "https://github.com/codingspook/just-dom/issues"
     },
-    "homepage": "https://github.com/codingspook/easy-dom#readme",
+    "homepage": "https://github.com/codingspook/just-dom#readme",
     "sideEffects": false
 }
