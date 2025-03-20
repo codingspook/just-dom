@@ -76,6 +76,13 @@ const data = await fetcher('https://api.example.com/data', {
 // Selezionare elementi DOM esistenti
 const element = getElement('#my-id');
 
+// Creare un riferimento a un elemento
+const ref = createRef();
+DOM.div({ ref }, 'Ciao');
+
+// Usare il riferimento per manipolare l'elemento
+ref.current.style.color = 'red';
+
 // Creare elementi da stringa HTML
 const fragment = createElFromHTMLString('<div>Ciao</div><p>Mondo</p>');
 document.body.appendChild(fragment);
