@@ -1,6 +1,7 @@
 // Interfaccia per gli attributi DOM generico
 export interface DOMAttributes<T extends HTMLElement = HTMLElement> {
     id?: string;
+    ref?: string;
     className?: string;
     style?: Partial<CSSStyleDeclaration>;
     title?: string;
@@ -28,12 +29,13 @@ export function createElFromHTMLString(HTMLString: string): DocumentFragment;
 export function fragment(children: (Node | string)[]): DocumentFragment;
 export function createRoot(rootId: string, rootEl: HTMLElement): void;
 export function Outlet(elId?: string): HTMLElement;
-
+export function createRef(): { current: HTMLElement | null };
 // Interfaccia per l'oggetto DOM principale
 interface DOM {
     createElFromHTMLString: typeof createElFromHTMLString;
     getElement: typeof getElement;
     fragment: typeof fragment;
+    createRef: typeof createRef;
     createRoot: typeof createRoot;
     classNames: typeof classNames;
     fetcher: typeof fetcher;

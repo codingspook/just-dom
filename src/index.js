@@ -245,6 +245,7 @@ const createRoot = (rootId, rootEl) => {
  * @template {keyof HTMLElementTagNameMap} K
  * @typedef {Object} DOMAttributes
  * @property {string} [id] - ID dell'elemento
+ * @property {string} [ref] - Riferimento all'elemento
  * @property {string|string[]} [className] - Classi CSS dell'elemento (stringa o array di stringhe)
  * @property {string|Object.<string, string>} [style] - Stile inline dell'elemento (stringa CSS o oggetto di stili)
  * @property {string} [title] - Titolo dell'elemento (tooltip)
@@ -272,6 +273,7 @@ const createRoot = (rootId, rootEl) => {
  * @property {function(string): HTMLElement} getElement - Restituisce un elemento del DOM tramite selettore CSS
  * @property {function(Array<Node|string>): DocumentFragment} fragment - Crea un DocumentFragment dai nodi figli forniti
  * @property {function(string, HTMLElement): void} createRoot - Aggiunge un elemento alla radice del DOM
+ * @property {function(string, HTMLElement): void} createRef - Crea un riferimento a un elemento
  * @property {function(...(string|boolean|null|undefined)): string} classNames - Utility per combinare classi CSS condizionalmente
  * @property {function(string, Object): Promise<any>} fetcher - Utility per effettuare richieste HTTP
  * @property {function(Object): HTMLElement} Outlet - Componente per il rendering condizionale
@@ -474,5 +476,6 @@ export {
     createElFromHTMLString,
     fragment,
     createRoot,
+    createRef,
     Outlet,
 };
