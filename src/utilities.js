@@ -31,9 +31,31 @@ export const applyAttributes = (el, attributes) => {
 };
 
 /**
+ * Definizione di tipo per un Ref
+ * @template T
+ * @typedef {Object} Ref
+ * @property {T|undefined} current - Riferimento all'elemento
+ */
+
+/**
+ * Crea un riferimento per un elemento DOM
+ * @template T
+ * @return {Ref<T>} Oggetto con la proprietà current
+ *
+ * @example
+ * const ref = createRef();
+ * const el = DOM.div({ ref }, "Hello");
+ * console.log(ref.current); // <div></div>
+ */
+export function createRef() {
+    return { current: undefined };
+}
+
+/**
  * Crea un elemento DOM
  * @param {string} tagName - Nome del tag HTML
  * @param {Object} options - Attributi dell'elemento
+ * @param {Ref<HTMLElement>} [options.ref] - Riferimento all'elemento DOM
  * @param {Array} children - Array di nodi figli
  * @return {HTMLElement} Elemento creato
  */
@@ -41,7 +63,16 @@ export const createDOMElement = (tagName, options, children) => {
     const el = document.createElement(tagName);
 
     // Applica gli attributi
-    applyAttributes(el, options);
+    if (options) {
+        // Gestisce ref se presente
+        if (options.ref && typeof options.ref === "object" && "current" in options.ref) {
+            options.ref.current = el;
+            const { ref, ...restOptions } = options;
+            applyAttributes(el, restOptions);
+        } else {
+            applyAttributes(el, options);
+        }
+    }
 
     // Aggiungi i figli
     if (children && children.length) {
