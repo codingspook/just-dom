@@ -2,7 +2,7 @@
  * @fileoverview Modulo principale per la creazione e manipolazione di elementi DOM con un'API dichiarativa.
  * @module just-dom
  */
-import { createDOMElement, classNames, fetcher, Outlet } from "./utilities.js";
+import { createDOMElement, classNames, fetcher, createRef, Outlet } from "./utilities.js";
 
 /**
  * Lista completa dei tag HTML supportati dalla libreria.
