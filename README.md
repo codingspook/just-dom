@@ -1,8 +1,15 @@
-![logo](https://just-dom.vercel.app/logo.svg)
+<div align="center">
+  <img src="https://just-dom.vercel.app/logo.svg" alt="logo" width="100" />
 
-# Just DOM
+  # Just DOM
 
-Una libreria JavaScript leggera per semplificare la manipolazione del DOM.
+  Una libreria JavaScript leggera per semplificare la manipolazione del DOM.
+
+  [![npm version](https://img.shields.io/npm/v/just-dom.svg)](https://www.npmjs.com/package/just-dom)
+  [![bundle size](https://img.shields.io/bundlephobia/minzip/just-dom)](https://bundlephobia.com/package/just-dom)
+  [![downloads](https://img.shields.io/npm/dt/just-dom.svg)](https://www.npmjs.com/package/just-dom)
+  [![license](https://img.shields.io/npm/l/just-dom.svg)](https://github.com/yourusername/just-dom/blob/main/LICENSE)
+</div>
 
 ## Caratteristiche
 
