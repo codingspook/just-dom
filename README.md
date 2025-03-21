@@ -1,3 +1,5 @@
+![logo](https://just-dom.vercel.app/logo.svg)
+
 # Just DOM
 
 Una libreria JavaScript leggera per semplificare la manipolazione del DOM.

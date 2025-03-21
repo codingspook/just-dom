@@ -36,6 +36,6 @@
     "bugs": {
         "url": "https://github.com/codingspook/just-dom/issues"
     },
-    "homepage": "https://github.com/codingspook/just-dom#readme",
+    "homepage": "https://just-dom.vercel.app/",
     "sideEffects": false
 }
