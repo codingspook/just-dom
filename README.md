@@ -12,7 +12,7 @@
   [![downloads](https://img.shields.io/npm/dt/just-dom.svg)](https://www.npmjs.com/package/just-dom)
   [![license](https://img.shields.io/npm/l/just-dom.svg)](https://github.com/yourusername/just-dom/blob/main/LICENSE)
 
-  [Website](https://just-dom.vercel.app) | Created by [Manuel Di Campli](https://github.com/codingspook) & [Simone Ergotino](https://github.com/ergo04)
+  [Website](https://just-dom.vercel.app) | Created by Manuel Di Campli [@codingspook](https://github.com/codingspook) & Simone Ergotino [@ergo04](https://github.com/ergo04)
 </div>
 
 ## Features
