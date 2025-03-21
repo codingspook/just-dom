@@ -3,7 +3,7 @@
 
   # Just DOM
 
-  Una libreria JavaScript leggera per semplificare la manipolazione del DOM.
+  A lightweight JavaScript library to simplify DOM manipulation.
 
   [![npm version](https://img.shields.io/npm/v/just-dom.svg)](https://www.npmjs.com/package/just-dom)
   [![bundle size](https://img.shields.io/bundlephobia/minzip/just-dom)](https://bundlephobia.com/package/just-dom)
@@ -11,93 +11,93 @@
   [![license](https://img.shields.io/npm/l/just-dom.svg)](https://github.com/yourusername/just-dom/blob/main/LICENSE)
 </div>
 
-## Caratteristiche
+## Features
 
-- Creazione semplificata di elementi DOM
-- Gestione di attributi, stili e eventi in un'unica interfaccia
-- Supporto per tutti i tag HTML standard
-- Funzioni di utilità per manipolazione classi CSS, routing e fetch API
-- Nessuna dipendenza esterna
-- Dimensioni ridotte (< 20KB)
-- Supporto completo per TypeScript
+- Simplified DOM element creation
+- Handling attributes, styles, and events in a single interface
+- Support for all standard HTML tags
+- Utility functions for CSS class manipulation, routing, and fetch API
+- No external dependencies
+- Small size (< 20KB)
+- Full TypeScript support
 
-## Installazione
+## Installation
 
 ```bash
 npm install just-dom
 ```
 
-## Utilizzo
+## Usage
 
 ### Import
 
-Easy DOM supporta diversi metodi di import per la massima flessibilità:
+Easy DOM supports different import methods for maximum flexibility:
 
 ```javascript
-// Import dell'oggetto DOM principale (raccomandato)
+// Import the main DOM object (recommended)
 import DOM from 'just-dom';
 
-// Import delle singole funzioni di utilità
+// Import individual utility functions
 import { classNames, fetcher, getElement } from 'just-dom';
 
-// Import misto
+// Mixed import
 import DOM, { classNames, fetcher } from 'just-dom';
 ```
 
-### Creare elementi DOM
+### Creating DOM elements
 
 ```javascript
 import DOM from 'just-dom';
 
-// Usando helper di tag
-const header = DOM.h1({ className: 'title' }, ['Benvenuto in Easy DOM']);
+// Using tag helpers
+const header = DOM.h1({ className: 'title' }, ['Welcome to Easy DOM']);
 
 const btn = DOM.button(
   { 
     className: 'btn primary',
-    onclick: () => alert('Cliccato!')
+    onclick: () => alert('Clicked!')
   },
-  ['Clicca qui']
+  ['Click here']
 );
 
-// Annidamento di elementi
+// Nesting elements
 const container = DOM.div({ className: 'container' }, [header, btn]);
 ```
 
-### Funzioni di utilità
+### Utility functions
 
 ```javascript
 import { classNames, fetcher, getElement, createElFromHTMLString } from 'just-dom';
 
-// Creare classi condizionali
+// Creating conditional classes
 const btnClass = classNames({
   'btn': true,
   'btn-primary': true,
   'disabled': false
-}); // Risultato: "btn btn-primary"
+}); // Result: "btn btn-primary"
 
-// Effettuare richieste HTTP
+// Making HTTP requests
 const data = await fetcher('https://api.example.com/data', {
   method: 'POST',
   body: JSON.stringify({ key: 'value' })
 });
 
-// Selezionare elementi DOM esistenti
+// Selecting existing DOM elements
 const element = getElement('#my-id');
 
-// Creare un riferimento a un elemento
+// Creating a reference to an element
 const ref = createRef();
-DOM.div({ ref }, 'Ciao');
+DOM.div({ ref }, 'Hello');
 
-// Usare il riferimento per manipolare l'elemento
+// Using the reference to manipulate the element
 ref.current.style.color = 'red';
 
-// Creare elementi da stringa HTML
-const fragment = createElFromHTMLString('<div>Ciao</div><p>Mondo</p>');
+// Creating elements from HTML string
+const fragment = createElFromHTMLString('<div>Hello</div><p>World</p>');
 document.body.appendChild(fragment);
 ```
 
-### Routing (richiede vanilla-router)
+### Routing (requires vanilla-router)
 
 ```javascript
 import { Outlet } from 'just-dom';
@@ -106,21 +106,21 @@ const routerOutlet = Outlet('app');
 document.body.appendChild(routerOutlet);
 ```
 
-## Supporto TypeScript
+## TypeScript Support
 
-Easy DOM include dichiarazioni di tipo TypeScript complete. Non è necessario installare pacchetti aggiuntivi.
+Easy DOM includes complete TypeScript type declarations. No additional packages are required.
 
 ```typescript
 import DOM, { DOMAttributes } from 'just-dom';
 
-// Le proprietà hanno suggerimenti e controllo dei tipi
+// Properties have hints and type checking
 const button = DOM.button({ 
   className: 'btn',
   disabled: false,
-  onclick: (e: MouseEvent) => console.log('Cliccato!', e)
+  onclick: (e: MouseEvent) => console.log('Clicked!', e)
 }, ['Click me']);
 
-// Definizione di proprietà personalizzate
+// Defining custom properties
 interface MyButtonProps extends DOMAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'danger';
 }
@@ -133,24 +133,24 @@ function createButton(props: MyButtonProps, children: string[]) {
 }
 ```
 
-## Compatibilità
+## Compatibility
 
-- Tutti i browser moderni (Chrome, Firefox, Safari, Edge)
-- IE11 con l'uso di polyfill appropriati
+- All modern browsers (Chrome, Firefox, Safari, Edge)
+- IE11 with appropriate polyfills
 
-## Sviluppo
+## Development
 
 ```bash
-# Installa le dipendenze
+# Install dependencies
 npm install
 
-# Compila il progetto
+# Build the project
 npm run build
 
-# Esegui i test
+# Run tests
 npm test
 ```
 
-## Licenza
+## License
 
 MIT
