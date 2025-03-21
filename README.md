@@ -1,5 +1,7 @@
 <div align="center">
-  <img src="https://just-dom.vercel.app/logo.svg" alt="logo" width="100" />
+  <a href="https://just-dom.vercel.app">
+    <img src="https://just-dom.vercel.app/logo.svg" alt="logo" width="100" />
+  </a>
 
   # Just DOM
 
@@ -9,6 +11,8 @@
   [![bundle size](https://img.shields.io/bundlephobia/minzip/just-dom)](https://bundlephobia.com/package/just-dom)
   [![downloads](https://img.shields.io/npm/dt/just-dom.svg)](https://www.npmjs.com/package/just-dom)
   [![license](https://img.shields.io/npm/l/just-dom.svg)](https://github.com/yourusername/just-dom/blob/main/LICENSE)
+
+  [Website](https://just-dom.vercel.app) | Created by [Manuel Di Campli](https://github.com/codingspook) & [Simone Ergotino](https://github.com/ergo04)
 </div>
 
 ## Features
