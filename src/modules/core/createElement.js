@@ -1,9 +1,15 @@
 /**
+ * @fileoverview Modulo per la creazione di elementi DOM
+ * @module just-dom/core/createElement
+ */
+
+/**
  * Applica gli attributi HTML a un elemento
  * @param {HTMLElement} el - Elemento HTML
  * @param {Object} attributes - Oggetto contenente gli attributi
+ * @private
  */
-export const applyAttributes = (el, attributes) => {
+const applyAttributes = (el, attributes) => {
     if (!attributes) return;
 
     for (const [key, value] of Object.entries(attributes)) {
@@ -31,31 +37,9 @@ export const applyAttributes = (el, attributes) => {
 };
 
 /**
- * Definizione di tipo per un Ref
- * @template T
- * @typedef {Object} Ref
- * @property {T|undefined} current - Riferimento all'elemento
- */
-
-/**
- * Crea un riferimento per un elemento DOM
- * @template T
- * @return {Ref<T>} Oggetto con la proprietà current
- *
- * @example
- * const ref = createRef();
- * const el = DOM.div({ ref }, "Hello");
- * console.log(ref.current); // <div></div>
- */
-export function createRef() {
-    return { current: undefined };
-}
-
-/**
  * Crea un elemento DOM
  * @param {string} tagName - Nome del tag HTML
  * @param {Object} options - Attributi dell'elemento
- * @param {Ref<HTMLElement>} [options.ref] - Riferimento all'elemento DOM
  * @param {Array} children - Array di nodi figli
  * @return {HTMLElement} Elemento creato
  */
@@ -88,47 +72,4 @@ export const createDOMElement = (tagName, options, children) => {
     }
 
     return el;
-};
-
-/**
- * Funzione di utilità per creare classi condizionali
- * @param {Object} classes - Oggetto con coppie chiave-valore per le classi
- * @return {string} Stringa di classi CSS
- */
-export const classNames = (classes) => {
-    if (!classes) return "";
-
-    return Object.entries(classes)
-        .filter(([_, value]) => Boolean(value))
-        .map(([key]) => key)
-        .join(" ");
-};
-
-/**
- * Funzione di utilità per fare richieste HTTP
- * @param {string} url - URL della richiesta
- * @param {Object} options - Opzioni della richiesta
- * @return {Promise} Promise con il risultato della richiesta
- * @throws {Error} Errore di rete
- */
-export const fetcher = async (url, options) => {
-    try {
-        let res = await fetch(url, options);
-        return res.json();
-    } catch (err) {
-        console.log(err);
-        throw new Error("Failed to fetch");
-    }
-};
-
-/**
- * Funzione di utilità per creare l'elemento Outlet per il routing
- * (richiede vanilla-router)
- * @param {string} elId - ID dell'elemento HTML che conterrà il contenuto
- * @returns {HTMLElement} Elemento section che fungerà da outlet
- */
-export const Outlet = (elId = "router-wrap") => {
-    const outputEL = document.createElement("section");
-    outputEL.dataset.vanillaRouteEle = elId;
-    return outputEL;
 };
