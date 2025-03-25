@@ -60,14 +60,18 @@ export const createDOMElement = (tagName, options, children) => {
 
     // Aggiungi i figli
     if (children && children.length) {
-        for (const child of children) {
-            if (child) {
-                if (typeof child === "string") {
-                    el.appendChild(document.createTextNode(child));
-                } else {
-                    el.appendChild(child);
+        if (Array.isArray(children)) {
+            for (const child of children) {
+                if (child) {
+                    if (typeof child === "string") {
+                        el.appendChild(document.createTextNode(child));
+                    } else {
+                        el.appendChild(child);
+                    }
                 }
             }
+        } else {
+            el.appendChild(children);
         }
     }
 
