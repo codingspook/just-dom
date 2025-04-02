@@ -5,7 +5,7 @@
 
 /**
  * Funzione di utilità per creare l'elemento Outlet per il routing
- * (richiede vanilla-router)
+ * (richiede vanilla-routing)
  * @param {string} elId - ID dell'elemento HTML che conterrà il contenuto
  * @returns {HTMLElement} Elemento section che fungerà da outlet
  *
